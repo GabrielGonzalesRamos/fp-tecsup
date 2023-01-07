@@ -1,0 +1,211 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "TECSUP-C28",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:5000",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/productos": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "/productos",
+        "operationId": "/productos",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "/productos",
+        "operationId": "Post/productos",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/productosrequest"
+                  },
+                  {
+                    "example": {
+                      "nombre": "Leche de almendras",
+                      "precio": 3.5,
+                      "cantidad": 1
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "nombre": "Leche de almendras",
+                "precio": 3.5,
+                "cantidad": 1
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "/productos/<int:id>",
+        "operationId": "/productos/<int:id>",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/productos/0": {
+      "put": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "/productos/<int:id>",
+        "operationId": "Put/productos/<int:id>",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/productosintidrequest"
+                  },
+                  {
+                    "example": {
+                      "nombre": "1 KG de Azucar",
+                      "precio": 4.0,
+                      "cantidad": 1
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "nombre": "1 KG de Azucar",
+                "precio": 4.0,
+                "cantidad": 1
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "/productos/<int:id>1",
+        "operationId": "/productos/<int:id>1",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "productosrequest": {
+        "title": "productosrequest",
+        "required": [
+          "nombre",
+          "precio",
+          "cantidad"
+        ],
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "type": "string"
+          },
+          "precio": {
+            "type": "number"
+          },
+          "cantidad": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "nombre": "Leche de almendras",
+          "precio": 3.5,
+          "cantidad": 1
+        }
+      },
+      "productosintidrequest": {
+        "title": "productosintidrequest",
+        "required": [
+          "nombre",
+          "precio",
+          "cantidad"
+        ],
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "type": "string"
+          },
+          "precio": {
+            "type": "number"
+          },
+          "cantidad": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "nombre": "1 KG de Azucar",
+          "precio": 4.0,
+          "cantidad": 1
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Misc",
+      "description": ""
+    }
+  ]
+}

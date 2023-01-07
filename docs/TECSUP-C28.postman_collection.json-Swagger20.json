@@ -1,0 +1,200 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "TECSUP-C28",
+    "contact": {}
+  },
+  "host": "localhost:5000",
+  "basePath": "/",
+  "securityDefinitions": {},
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/productos": {
+      "get": {
+        "summary": "/productos",
+        "tags": [
+          "LISTAR O AÑADIR PRODUCTOS"
+        ],
+        "operationId": "/productos",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "post": {
+        "summary": "/productos",
+        "tags": [
+          "LISTAR O AÑADIR PRODUCTOS"
+        ],
+        "operationId": "Post/productos",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/~1productosrequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "delete": {
+        "summary": "/productos/<int:id>",
+        "tags": [
+          "ELIMINAR ACTULIZAR O BUSCAR"
+        ],
+        "operationId": "/productos/<int:id>",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/productos/0": {
+      "put": {
+        "summary": "/productos/<int:id>",
+        "tags": [
+          "ELIMINAR ACTULIZAR O BUSCAR"
+        ],
+        "operationId": "Put/productos/<int:id>",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/~1productos~1%3Cint%3Aid%3Erequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "get": {
+        "summary": "/productos/<int:id>1",
+        "tags": [
+          "ELIMINAR ACTULIZAR O BUSCAR"
+        ],
+        "operationId": "/productos/<int:id>1",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "/productosrequest": {
+      "title": "/productosrequest",
+      "example": {
+        "nombre": "Leche de almendras",
+        "precio": 3.5,
+        "cantidad": 1
+      },
+      "type": "object",
+      "properties": {
+        "nombre": {
+          "type": "string"
+        },
+        "precio": {
+          "type": "number",
+          "format": "double"
+        },
+        "cantidad": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "nombre",
+        "precio",
+        "cantidad"
+      ]
+    },
+    "/productos/<int:id>request": {
+      "title": "/productos/<int:id>request",
+      "example": {
+        "nombre": "1 KG de Azucar",
+        "precio": 4.0,
+        "cantidad": 1
+      },
+      "type": "object",
+      "properties": {
+        "nombre": {
+          "type": "string"
+        },
+        "precio": {
+          "type": "number",
+          "format": "double"
+        },
+        "cantidad": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "nombre",
+        "precio",
+        "cantidad"
+      ]
+    }
+  },
+  "tags": [
+    {
+      "name": "LISTAR O AÑADIR PRODUCTOS"
+    },
+    {
+      "name": "ELIMINAR ACTULIZAR O BUSCAR"
+    }
+  ]
+}

@@ -1,7 +1,20 @@
 from flask import Flask, request
 from flask_cors import CORS
+from flask_swagger_ui import get_swaggerui_blueprint
+
+SWAGGER_URL = ""
+API_URL = "/static/swagger.json"
+swagger_blueprint = get_swaggerui_blueprint(
+    SWAGGER_URL,
+    API_URL,
+    config={
+        'app_name': "Inventario"
+    }
+)
 
 app = Flask(__name__)
+app.register_blueprint(swagger_blueprint)
+
 CORS(app, methods=['GET', 'POST'], origins=['*'])
 productos = []
 
@@ -46,10 +59,6 @@ def gestion_producto(id):
             "content": request.get_json()
         }, 201
 
-@app.route("/productos/buscar")
-def buscar_productos():
-    print(request.args.get("nombre"))
-    return "ok"
 
 app.run(debug=True) 
  
